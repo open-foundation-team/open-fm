@@ -62,7 +62,7 @@ export const Sidebar = () => {
                         const activeTrack = idx === 1 ? 'active' : null;
 
                         return (
-                            <li className={["track", activeTrack].join(' ')}>
+                            <li className={["track", activeTrack].join(' ')} key={idx}>
                                 {track}
                             </li>
                         );
