@@ -44,8 +44,18 @@ export const PlayerControls = () => {
         }));
     };
 
+    const [ambienceVolume, setAmbienceVolume] = useState<number[]>([]);
+    const updateAmbienceVolume = (id: number, vol: number) => {
+        console.log(vol);
+        setAmbienceVolume(ambienceVolume.map((value, idx) => {
+            if (idx === id) return vol;
+            return value;
+        }));
+    };
+
     useEffect(() => {
-        setAmbiencePlaying(ambienceSamples.map(() => false))
+        setAmbiencePlaying(ambienceSamples.map(() => false));
+        setAmbienceVolume(ambienceSamples.map(() => 50));
     }, [ambienceSamples]);
 
     return (
@@ -111,8 +121,10 @@ export const PlayerControls = () => {
                                 <p>{env.title}</p>
                                 <AmbiencePlayer
                                     src={env.track}
+                                    volume={ambienceVolume[idx]}
                                     isPlaying={ambiencePlaying[idx]}
                                 />
+                                <input type="range" min={0} max={100} step={1} defaultValue={50} onChange={(e) => updateAmbienceVolume(idx, parseInt(e.target.value))} />
                             </div>
                         )
                     })}
