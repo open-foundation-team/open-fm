@@ -1,0 +1,61 @@
+.player-styled {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+
+    height: 150px;
+    width: 100%;
+
+    padding: 1rem 0;
+
+    background: #07001c;
+    color: #fff;
+
+    border-top: 1px solid #2e363e;
+
+    .player-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: none;
+            border: none;
+
+            cursor: pointer;
+
+            svg {
+                width: 32px;
+                color: #7e8185;
+            }
+
+            &.play-pause svg {
+                width: 60px;
+                background: #201a33;
+                border-radius: 100%;
+                padding: .5rem;
+            }
+
+            &.loop-shuffle svg {
+                width: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .playercontrols-styled {
+        height: 80px;
+    }
+}

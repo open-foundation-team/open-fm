@@ -1,0 +1,46 @@
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+// Style resets
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: 'Source Code Pro', monospace;
+    vertical-align: baseline;
+
+    color: #e6e6e7;
+
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: #e6e6e7;
+    text-decoration: none;
+}
+
+// Main app styles
+.app-container {
+    height: 100dvh;
+    width: 100dvw;
+}
+
+html {
+    background: #07001c;
+}
