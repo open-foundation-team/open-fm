@@ -4,6 +4,7 @@ export * from './IconBackward';
 export * from './IconChevronDown';
 export * from './IconCloud';
 export * from './IconCoffee';
+export * from './IconFire';
 export * from './IconForward';
 export * from './IconLoop';
 export * from './IconPause';

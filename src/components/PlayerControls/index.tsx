@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // Icon imports
-import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconForward, IconLoop, IconPause, IconPlay, IconSettings, IconShare } from '../../icons';
+import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconFire, IconForward, IconLoop, IconPause, IconPlay, IconSettings, IconShare } from '../../icons';
 
 // Style imports
 import './styles.scss';
@@ -26,8 +26,8 @@ export const PlayerControls = () => {
             track: '/audio/storm-low.mp3'
         },
         {
-            icon: <IconCloud />,
-            title: 'thunder storm',
+            icon: <IconFire />,
+            title: 'campfire',
             track: '/audio/storm-low.mp3'
         },
     ];
