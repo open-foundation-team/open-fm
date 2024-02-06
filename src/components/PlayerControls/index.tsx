@@ -1,5 +1,8 @@
 // React imports
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
+// Component imports
+import { AmbiencePlayer } from '../AmbiencePlayer';
 
 // Icon imports
 import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconFire, IconForward, IconLoop, IconPause, IconPlay, IconSettings, IconShare } from '../../icons';
@@ -8,13 +11,14 @@ import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconFire, IconFor
 import './styles.scss';
 
 
+// Component declaration
 export const PlayerControls = () => {
 
-    const [isPlaying, setPlaying] = useState(true);
+    const [isPlaying, setPlaying] = useState(false);
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
     const ambienceClass = isAmbienceOpen ? 'open' : null;
 
-    const ambienceSamples = [
+    const ambienceSamples = useMemo(() => [
         {
             icon: <IconCoffee />,
             title: 'coffee house',
@@ -28,13 +32,27 @@ export const PlayerControls = () => {
         {
             icon: <IconFire />,
             title: 'campfire',
-            track: '/audio/storm-low.mp3'
-        },
-    ];
+            track: '/audio/campfire-low.mp3'
+        }
+    ], []);
+
+    const [ambiencePlaying, setAmbiencePlaying] = useState<boolean[]>([]);
+    const togglePlayingAmbiance = (id: number) => {
+        setAmbiencePlaying(ambiencePlaying.map((value, idx) => {
+            if (idx === id) return !value;
+            return value;
+        }));
+    };
+
+    useEffect(() => {
+        setAmbiencePlaying(ambienceSamples.map(() => false))
+    }, [ambienceSamples]);
 
     return (
         <>
             <div className="player-styled">
+
+                {/* Now playing section */}
                 <div className="player-nowplaying">
                     <div className="nowplaying-text">
                         <p className="nowtext-song">Studio Ghibli - Spirited Away</p>
@@ -45,6 +63,8 @@ export const PlayerControls = () => {
                         <IconShare />
                     </div>
                 </div>
+
+                {/* Music controls section */}
                 <div className="player-controls">
                     <button className="loop-shuffle">
                         <IconLoop />
@@ -54,9 +74,9 @@ export const PlayerControls = () => {
                     </button>
                     <button className="play-pause" onClick={() => setPlaying(!isPlaying)}>
                         {isPlaying ?
-                            <IconPause />
-                            :
                             <IconPlay />
+                            :
+                            <IconPause />
                         }
                     </button>
                     <button className="forward-rewind">
@@ -67,6 +87,8 @@ export const PlayerControls = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Ambience floating section */}
             <div className={["player-ambience", ambienceClass].join(' ')}>
                 <div className="ambience-header">
                     <p className="header-title">Ambience</p>
@@ -77,17 +99,23 @@ export const PlayerControls = () => {
                 <div className="button-group">
                     {ambienceSamples.map((env, idx) => {
 
-                        const activeTrack = idx === 0 ? 'active' : null;
+                        const activeTrack = ambiencePlaying[idx] ? 'active' : null;
 
                         return (
-                            <div className={["ambience-button", activeTrack].join(' ')} key={idx}>
+                            <div
+                                className={["ambience-button", activeTrack].join(' ')}
+                                onClick={() => togglePlayingAmbiance(idx)}
+                                key={idx}
+                            >
                                 {env.icon}
                                 <p>{env.title}</p>
+                                <AmbiencePlayer
+                                    src={env.track}
+                                    isPlaying={ambiencePlaying[idx]}
+                                />
                             </div>
                         )
-                    })
-
-                    }
+                    })}
                 </div>
             </div>
         </>
