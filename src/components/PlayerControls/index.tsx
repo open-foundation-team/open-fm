@@ -46,7 +46,6 @@ export const PlayerControls = () => {
 
     const [ambienceVolume, setAmbienceVolume] = useState<number[]>([]);
     const updateAmbienceVolume = (id: number, vol: number) => {
-        console.log(vol);
         setAmbienceVolume(ambienceVolume.map((value, idx) => {
             if (idx === id) return vol;
             return value;
