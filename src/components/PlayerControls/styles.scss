@@ -138,6 +138,29 @@
                 width: 24px;
             }
 
+            input[type='range'] {
+                appearance: none !important;
+                -webkit-appearance: none !important;
+                background: #2e363e;
+                height: 2px;
+                width: 100px;
+                margin-top: .5rem;
+
+                &::-webkit-slider-thumb {
+                    appearance: none !important;
+                    -webkit-appearance: none !important;
+                    background: #2e363e;
+                    height: 7px;
+                    width: 7px;
+                    border-radius: 100%;
+
+                    &:hover {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+            }
+
             &.active {
 
                 svg {
