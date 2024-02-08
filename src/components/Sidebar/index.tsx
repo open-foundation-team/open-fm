@@ -41,7 +41,7 @@ export const Sidebar = () => {
             <div className="sidebar-focus">
                 {focusModes.map((mode, idx) => {
 
-                    const activeClass = idx === 0 ? 'active' : null;
+                    const activeClass = idx === 3 ? 'active' : null;
 
                     return (
                         <button className={["focus-button", activeClass].join(' ')} key={idx}>
