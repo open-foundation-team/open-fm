@@ -27,8 +27,28 @@
 
         width: 100%;
 
-        .nowplaying-text {
+        .nowplaying-track {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
             font-size: 12px;
+
+            .nowplaying-artwork {
+                height: 40px;
+                width: 40px;
+                background-color: #9c3cbb;
+                border-radius: .12rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+
+                    &.playing {
+                        animation: spinClockwise 2.5s linear infinite;
+                    }
+                }
+            }
 
             .nowtext-song {
                 color: #fff;
@@ -190,5 +210,16 @@
 
     .playercontrols-styled {
         height: 80px;
+    }
+}
+
+// Animations
+@keyframes spinClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

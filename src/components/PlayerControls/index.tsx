@@ -16,6 +16,7 @@ export const PlayerControls = () => {
 
     const [isPlaying, setPlaying] = useState(false);
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
+    const playingClass = isPlaying ? 'playing' : null;
     const ambienceClass = isAmbienceOpen ? 'open' : null;
 
     const ambienceSamples = useMemo(() => [
@@ -63,9 +64,18 @@ export const PlayerControls = () => {
 
                 {/* Now playing section */}
                 <div className="player-nowplaying">
-                    <div className="nowplaying-text">
-                        <p className="nowtext-song">Studio Ghibli - Spirited Away</p>
-                        <p className="nowtext-playlist">coders delight()</p>
+                    <div className="nowplaying-track">
+                        <div className="nowplaying-artwork">
+                            <img
+                                className={[playingClass].join(' ')}
+                                src="/images/vinyl.jpeg"
+                                alt="Spinning vinyl"
+                            />
+                        </div>
+                        <div className="nowplaying-text">
+                            <p className="nowtext-song">Studio Ghibli - Spirited Away</p>
+                            <p className="nowtext-playlist">coders delight()</p>
+                        </div>
                     </div>
                     <div className="nowplaying-icons" onClick={() => setAmbienceOpen(prev => !prev)}>
                         <IconSettings />
@@ -83,9 +93,9 @@ export const PlayerControls = () => {
                     </button>
                     <button className="play-pause" onClick={() => setPlaying(!isPlaying)}>
                         {isPlaying ?
-                            <IconPlay />
-                            :
                             <IconPause />
+                            :
+                            <IconPlay />
                         }
                     </button>
                     <button className="forward-rewind">
