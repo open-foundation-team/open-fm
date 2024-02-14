@@ -124,6 +124,12 @@ export const PlayerControls = ({
                         <IconLoop />
                     </button>
                 </div>
+
+                <AmbiencePlayer
+                    src={nowPlaying.song.src}
+                    volume={100}
+                    isPlaying={isPlaying}
+                />
             </div>
 
             {/* Ambience floating section */}
