@@ -113,11 +113,15 @@ export const PlayerControls = () => {
                         return (
                             <div
                                 className={["ambience-button", activeTrack].join(' ')}
-                                onClick={() => togglePlayingAmbiance(idx)}
                                 key={idx}
                             >
-                                {env.icon}
-                                <p>{env.title}</p>
+                                <div
+                                    className='button-clickarea'
+                                    onClick={() => togglePlayingAmbiance(idx)}
+                                >
+                                    {env.icon}
+                                    <p>{env.title}</p>
+                                </div>
                                 <AmbiencePlayer
                                     src={env.track}
                                     volume={ambienceVolume[idx]}
