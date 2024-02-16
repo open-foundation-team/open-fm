@@ -1,6 +1,6 @@
 // Component imports
-import { useEffect, useState } from "react";
-import { PlayerControls, Sidebar } from "./components";
+import { useEffect, useRef, useState } from "react";
+import { MusicPlayer, PlayerControls, Sidebar } from "./components";
 
 // Sound / mood imports
 import { moods } from "./library";
@@ -8,6 +8,8 @@ import { moods } from "./library";
 
 // Application declaration
 const App = () => {
+
+  const musicRef = useRef<HTMLAudioElement>(null);
 
   const [isPlaying, setPlaying] = useState(false);
 
@@ -51,6 +53,13 @@ const App = () => {
         nowPlaying={nowPlaying}
         setPlaying={setPlaying}
         songControl={songControl}
+      />
+      <MusicPlayer
+        key={nowPlaying.song.src}
+        src={nowPlaying.song.src}
+        volume={100}
+        isPlaying={isPlaying}
+        audioRef={musicRef}
       />
     </main>
   );

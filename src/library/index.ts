@@ -60,7 +60,7 @@ export const moods: IMood[] = [
                     {
                         title: "Close to You",
                         artist: "The Carpenters - Reneé Dominique Cover",
-                        src: "close-to-you.mp3"
+                        src: '/audio/playlists/old-songs-but-lofi/cant-take-my-eyes-off-you.mp3'
                     }
                 ]
             }
