@@ -1,69 +1,95 @@
+// Global imports
+import { Dispatch, SetStateAction } from 'react';
+
 // Style imports
+import { IMood } from '../../types';
 import './styles.scss';
 
-export const Sidebar = () => {
 
-    const focusModes = ['code', 'sleep', 'chill', 'work'];
+// Component props
+interface SidebarProps {
+    moods: IMood[];
+    selectedMood: number;
+    selectedPlaylist: number;
+    selectedSong: number;
+    updateMood: Dispatch<SetStateAction<number>>;
+    updatePlaylist: Dispatch<SetStateAction<number>>;
+    updateSong: Dispatch<SetStateAction<number>>;
+}
 
-    const sampleTracks = [
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-        "Studio Ghibli - Kiki's Delivery Service",
-        "Studio Ghibli - Spirited Away",
-        "Studio Ghibli - Howl's Moving Castle",
-    ];
+
+// Component declaration and export
+export const Sidebar = ({
+    moods,
+    selectedMood,
+    selectedPlaylist,
+    selectedSong,
+    updateMood,
+    updatePlaylist,
+    updateSong
+}: SidebarProps) => {
+
+    const focusModes = moods.map((mood) => mood.name);
+    const currentPlaylist = moods[selectedMood].playlists[selectedPlaylist];
+
+    // Next playlist logic
+    const nextPlaylist = () => {
+        const next = selectedPlaylist + 1;
+        next >= moods[selectedMood].playlists.length ? updatePlaylist(0) : updatePlaylist(next);
+    };
 
     return (
         <div className="sidebar-styled">
+
+            {/* Header section */}
             <div className="sidebar-header">
                 <img className='header-logo' src="/logo.png" alt="open.fm ambient radio logo" />
                 <p className='header-title'>open.fm</p>
             </div>
+
+            {/* Mood Focus section */}
             <div className="sidebar-focus">
                 {focusModes.map((mode, idx) => {
 
-                    const activeClass = idx === 3 ? 'active' : null;
+                    const activeClass = idx === selectedMood ? 'active' : null;
 
                     return (
-                        <button className={["focus-button", activeClass].join(' ')} key={idx}>
+                        <button
+                            className={["focus-button", activeClass].join(' ')}
+                            onClick={() => updateMood(idx)}
+                            key={idx}
+                        >
                             {mode}
                         </button>
                     )
                 })}
             </div>
+
+            {/* Playlist section */}
             <div className="sidebar-playlist">
-                <p className="playlist-title">coders delight()</p>
-                <button className="playlist-next">[Next]</button>
+                <p className="playlist-title">{currentPlaylist.name}</p>
+                <button className="playlist-next" onClick={() => nextPlaylist()}>
+                    [Next]
+                </button>
             </div>
+
+            {/* Generic spacer */}
             <div className="sidebar-spacer" />
+
+            {/* Tracks section */}
             <div className="sidebar-tracks">
                 <ul className="track-list">
-                    {sampleTracks.map((track, idx) => {
+                    {currentPlaylist.songs.map((track, idx) => {
 
-                        const activeTrack = idx === 1 ? 'active' : null;
+                        const activeTrack = idx === selectedSong ? 'active' : null;
 
                         return (
-                            <li className={["track", activeTrack].join(' ')} key={idx}>
-                                {track}
+                            <li
+                                className={["track", activeTrack].join(' ')}
+                                onClick={() => updateSong(idx)}
+                                key={idx}
+                            >
+                                {track.title} - {track.artist}
                             </li>
                         );
                     })}

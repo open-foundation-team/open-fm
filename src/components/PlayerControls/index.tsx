@@ -1,5 +1,5 @@
 // React imports
-import { useEffect, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 
 // Component imports
 import { AmbiencePlayer } from '../AmbiencePlayer';
@@ -10,11 +10,30 @@ import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconFire, IconFor
 // Style imports
 import './styles.scss';
 
+// Type imports
+import { IPlaylist, ISong } from '../../types';
+
+
+// Component interface
+interface PlayerControlsProps {
+    isPlaying: boolean;
+    setPlaying: Dispatch<SetStateAction<boolean>>;
+    nowPlaying: {
+        song: ISong,
+        playlist: IPlaylist
+    };
+    songControl: (action: 'next' | 'prev') => void;
+}
+
 
 // Component declaration
-export const PlayerControls = () => {
+export const PlayerControls = ({
+    isPlaying,
+    setPlaying,
+    nowPlaying,
+    songControl
+}: PlayerControlsProps) => {
 
-    const [isPlaying, setPlaying] = useState(false);
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
     const playingClass = isPlaying ? 'playing' : null;
     const ambienceClass = isAmbienceOpen ? 'open' : null;
@@ -73,8 +92,8 @@ export const PlayerControls = () => {
                             />
                         </div>
                         <div className="nowplaying-text">
-                            <p className="nowtext-song">Studio Ghibli - Spirited Away</p>
-                            <p className="nowtext-playlist">coders delight()</p>
+                            <p className="nowtext-song">{nowPlaying.song?.title}</p>
+                            <p className="nowtext-playlist">{nowPlaying.playlist.name}</p>
                         </div>
                     </div>
                     <div className="nowplaying-icons" onClick={() => setAmbienceOpen(prev => !prev)}>
@@ -88,7 +107,7 @@ export const PlayerControls = () => {
                     <button className="loop-shuffle">
                         <IconLoop />
                     </button>
-                    <button className="forward-rewind">
+                    <button className="forward-rewind" onClick={() => songControl('prev')}>
                         <IconBackward />
                     </button>
                     <button className="play-pause" onClick={() => setPlaying(!isPlaying)}>
@@ -98,7 +117,7 @@ export const PlayerControls = () => {
                             <IconPlay />
                         }
                     </button>
-                    <button className="forward-rewind">
+                    <button className="forward-rewind" onClick={() => songControl('next')}>
                         <IconForward />
                     </button>
                     <button className="loop-shuffle">
