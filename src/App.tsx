@@ -80,6 +80,17 @@ const App = () => {
 
   return (
     <main className="app-container">
+      <img
+        src="/images/slides/plants.jpeg"
+        alt="Slide background"
+        style={{
+          position: 'absolute',
+          objectFit: 'cover',
+          width: '100dvw',
+          height: '100dvh',
+          zIndex: -100
+        }}
+      />
       <Sidebar
         moods={moods}
         selectedMood={mood}

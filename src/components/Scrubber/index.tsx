@@ -23,7 +23,7 @@ export const Scrubber = ({ value = 50, duration = 100 }: ScrubberProps) => {
             />
             <div
                 className="scrubber-marker"
-                style={{ left: `${progressValue - 1}%` }}
+                style={{ left: `${progressValue - .1}%` }}
             />
         </div>
     );
