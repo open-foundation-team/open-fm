@@ -94,6 +94,8 @@ const App = () => {
         nowPlaying={nowPlaying}
         setPlaying={setPlaying}
         songControl={songControl}
+        duration={duration}
+        currentTime={currentTime}
       />
       <MusicPlayer
         key={nowPlaying.song.src}

@@ -13,16 +13,6 @@ export const moods: IMood[] = [
                         src: '/audio/playlists/old-songs-but-lofi/cant-take-my-eyes-off-you.mp3'
                     },
                     {
-                        title: "Test",
-                        artist: "test",
-                        src: '/audio/playlists/old-songs-but-lofi/test.mp3'
-                    },
-                    {
-                        title: "Test",
-                        artist: "test",
-                        src: '/audio/playlists/old-songs-but-lofi/test.mp3'
-                    },
-                    {
                         title: "I Just Want To Be the One You Love",
                         artist: "Cryst",
                         src: "/audio/playlists/old-songs-but-lofi/i-just-want-to-be-the-one-you-love.mp3"

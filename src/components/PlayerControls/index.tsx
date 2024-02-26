@@ -12,6 +12,7 @@ import './styles.scss';
 
 // Type imports
 import { IPlaylist, ISong } from '../../types';
+import { Scrubber } from '..';
 
 
 // Component interface
@@ -23,6 +24,8 @@ interface PlayerControlsProps {
         playlist: IPlaylist
     };
     songControl: (action: 'next' | 'prev') => void;
+    duration: number;
+    currentTime: number;
 }
 
 
@@ -31,7 +34,9 @@ export const PlayerControls = ({
     isPlaying,
     setPlaying,
     nowPlaying,
-    songControl
+    songControl,
+    duration,
+    currentTime
 }: PlayerControlsProps) => {
 
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
@@ -100,6 +105,14 @@ export const PlayerControls = ({
                         <IconSettings />
                         <IconShare />
                     </div>
+                </div>
+
+                {/* Scrubber section */}
+                <div className="player-scrubber">
+                    <Scrubber
+                        duration={duration}
+                        value={currentTime}
+                    />
                 </div>
 
                 {/* Music controls section */}
