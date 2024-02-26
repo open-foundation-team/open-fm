@@ -40,22 +40,27 @@ const App = () => {
   // Add listenter to play state of audio ref
   useEffect(() => {
     const audio = musicRef.current;
+    if (!audio) return;
 
-    audio?.removeEventListener('play', () => setPlaying(true));
-    audio?.removeEventListener('pause', () => setPlaying(false));
-    audio?.removeEventListener('loadedmetadata', () => setDuration(audio.duration));
-    audio?.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
+    audio.addEventListener('loadedmetadata', () => setDuration(audio.duration));
+    audio.addEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
+    audio.addEventListener('ended', () => songControl('next'));
 
-    audio?.addEventListener('play', () => setPlaying(true));
-    audio?.addEventListener('pause', () => setPlaying(false));
-    audio?.addEventListener('loadedmetadata', () => setDuration(audio.duration));
-    audio?.addEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
+    // Play the song whenever the song index changes
+    const playSong = async () => {
+      try {
+        await audio.play();
+      } catch (error) {
+        console.error('Playback failed', error);
+      }
+    };
+
+    if (isPlaying) playSong();
 
     return () => {
-      audio?.removeEventListener('play', () => setPlaying(true));
-      audio?.removeEventListener('pause', () => setPlaying(false));
-      audio?.removeEventListener('loadedmetadata', () => setDuration(audio.duration));
-      audio?.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
+      audio.removeEventListener('loadedmetadata', () => setDuration(audio.duration));
+      audio.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
+      audio.removeEventListener('ended', () => songControl('next'));
     };
   }, [song]);
 
@@ -64,19 +69,7 @@ const App = () => {
     const audio = musicRef.current;
     if (isPlaying) audio?.play();
     if (!isPlaying) audio?.pause();
-  }, [isPlaying, song]);
-
-  // Action when song has ended
-  useEffect(() => {
-    console.log('test', currentTime, duration);
-
-    if (currentTime >= duration && duration !== 0) {
-      console.log('Song has ended, next song to play', song + 1);
-      setCurrentTime(0);
-      setDuration(0);
-      songControl('next');
-    }
-  }, [currentTime, duration, songControl]);
+  }, [isPlaying]);
 
   // Create now playing object
   const nowPlaying = {
