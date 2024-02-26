@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // Global imports
 import { useEffect } from 'react';
 
@@ -8,20 +9,12 @@ import './styles.scss';
 interface MusicPlayerProps {
     src: string;
     volume: number;
-    isPlaying?: boolean;
     audioRef: React.RefObject<HTMLAudioElement>;
 }
 
 
 // Component declaration and export
-export const MusicPlayer = ({ src, volume = 50, isPlaying = false, audioRef }: MusicPlayerProps) => {
-
-    // Update the audio play state
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (isPlaying) audio?.play();
-        if (!isPlaying) audio?.pause();
-    }, [isPlaying]);
+export const MusicPlayer = ({ src, volume = 100, audioRef }: MusicPlayerProps) => {
 
     // Update the audio volume
     useEffect(() => {
@@ -30,7 +23,7 @@ export const MusicPlayer = ({ src, volume = 50, isPlaying = false, audioRef }: M
 
     return (
         <div className="musicplayer-styled">
-            <audio src={src} ref={audioRef} loop />
+            <audio src={src} ref={audioRef} />
         </div>
     );
 };
