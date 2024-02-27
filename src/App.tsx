@@ -68,7 +68,7 @@ const App = () => {
       audio.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
       audio.removeEventListener('ended', () => songControl('next'));
     };
-  }, [song]);
+  }, [song, playlist, mood]);
 
   // Update the audio play state
   useEffect(() => {
