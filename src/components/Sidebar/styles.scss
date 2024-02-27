@@ -90,7 +90,7 @@
 
         width: 100%;
         overflow-y: scroll;
-        padding-bottom: 1rem;
+        margin-bottom: 1rem;
 
         .track-list {
 
@@ -117,7 +117,7 @@
 @media screen and (min-width: 1024px) {
 
     .sidebar-styled {
-        width: 425px;
-        margin-bottom: 80px;
+        width: 375px;
+        margin-bottom: 175px;
     }
 }

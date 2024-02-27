@@ -49,3 +49,17 @@ a {
 html {
     background: #07001c;
 }
+
+
+// Scrollbar styling
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #24292f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9424ae;
+}
