@@ -4,8 +4,14 @@
 import { useEffect, useRef, useState } from "react";
 import { MusicPlayer, PlayerControls, Sidebar } from "./components";
 
-// Sound / mood imports
-import { moods } from "./library";
+// Type imports
+import { IMood } from "./types";
+
+// Audio library imports
+import library from "./data/musicLibrary.json";
+
+// Assert the type of the imported JSON
+const typedLibrary: IMood[] = library as IMood[];
 
 
 // Application declaration
@@ -31,8 +37,8 @@ const App = () => {
 
   // Function to change song
   const songControl = (action: 'next' | 'prev') => {
-    if (action === 'next' && song !== moods[mood].playlists[playlist].songs.length - 1) setSong(prev => prev + 1);
-    if (action === 'next' && song === moods[mood].playlists[playlist].songs.length - 1) setSong(0);
+    if (action === 'next' && song !== typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(prev => prev + 1);
+    if (action === 'next' && song === typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(0);
     if (action === 'prev' && song !== 0) setSong(prev => prev - 1);
     if (action === 'prev' && song === 0) setSong(0);
   };
@@ -73,8 +79,8 @@ const App = () => {
 
   // Create now playing object
   const nowPlaying = {
-    song: moods[mood].playlists[playlist].songs[song],
-    playlist: moods[mood].playlists[playlist]
+    song: typedLibrary[mood].playlists[playlist].songs[song],
+    playlist: typedLibrary[mood].playlists[playlist]
   };
 
 
@@ -92,7 +98,7 @@ const App = () => {
         }}
       />
       <Sidebar
-        moods={moods}
+        moods={typedLibrary}
         selectedMood={mood}
         selectedPlaylist={playlist}
         selectedSong={song}

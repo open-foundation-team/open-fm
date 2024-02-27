@@ -1,0 +1,161 @@
+[
+  {
+    "name": "chill",
+    "playlists": []
+  },
+  {
+    "name": "code",
+    "playlists": [
+      {
+        "name": "code-fi",
+        "songs": [
+          {
+            "title": "Cant-Replace-You",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/cant-replace-you.mp3"
+          },
+          {
+            "title": "Chillin",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/chillin.mp3"
+          },
+          {
+            "title": "Coffee-Shop",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/coffee-shop.mp3"
+          },
+          {
+            "title": "Courage",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/courage.mp3"
+          },
+          {
+            "title": "Drown",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/drown.mp3"
+          },
+          {
+            "title": "Explorer",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/explorer.mp3"
+          },
+          {
+            "title": "Fields",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/fields.mp3"
+          },
+          {
+            "title": "Geneva",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/geneva.mp3"
+          },
+          {
+            "title": "Ginger-Spice",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/ginger-spice.mp3"
+          },
+          {
+            "title": "How-Can-You-Tell",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/how-can-you-tell.mp3"
+          },
+          {
+            "title": "Jupiter",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/jupiter.mp3"
+          },
+          {
+            "title": "Lullabyes",
+            "artist": "Someone",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/lullabyes_someone.mp3"
+          },
+          {
+            "title": "Nothing-Really-Matters-That-Much-To-Me-Anymore",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/nothing-really-matters-that-much-to-me-anymore.mp3"
+          },
+          {
+            "title": "Progress",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/progress.mp3"
+          },
+          {
+            "title": "Sanctuary",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/sanctuary.mp3"
+          },
+          {
+            "title": "Vancouver",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/code-fi/vancouver.mp3"
+          }
+        ]
+      },
+      {
+        "name": "old-songs-but-lofi",
+        "songs": [
+          {
+            "title": "",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/.DS_Store"
+          },
+          {
+            "title": "Blue-Moon",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/blue-moon.mp3"
+          },
+          {
+            "title": "Build-Me-Up-Buttercup",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/build-me-up-buttercup.mp3"
+          },
+          {
+            "title": "Cant-Take-My-Eyes-Off-You",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/cant-take-my-eyes-off-you.mp3"
+          },
+          {
+            "title": "Close-To-You",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/close-to-you.mp3"
+          },
+          {
+            "title": "Fly-Me-To-The-Moon",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/fly-me-to-the-moon.mp3"
+          },
+          {
+            "title": "How-Deep-Is-Your-Love",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/how-deep-is-your-love.mp3"
+          },
+          {
+            "title": "I-Just-Want-To-Be-The-One-You-Love",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-just-want-to-be-the-one-you-love.mp3"
+          },
+          {
+            "title": "I-Love-You",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-love-you.mp3"
+          },
+          {
+            "title": "Mr-Lonely",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/mr-lonely.mp3"
+          },
+          {
+            "title": "Test",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/test.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "retro",
+    "playlists": []
+  }
+]
