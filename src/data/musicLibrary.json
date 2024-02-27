@@ -163,5 +163,93 @@
         ]
       }
     ]
+  },
+  {
+    "name": "synth",
+    "playlists": [
+      {
+        "name": "night-rider",
+        "songs": [
+          {
+            "title": "Among The Stars",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/among-the-stars_night-rider-87.mp3"
+          },
+          {
+            "title": "Arcade Nights",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/arcade-nights_night-rider-87.mp3"
+          },
+          {
+            "title": "Enid'S Theme",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/enid's-theme_night-rider-87.mp3"
+          },
+          {
+            "title": "Exalted",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/exalted_night-rider-87.mp3"
+          },
+          {
+            "title": "Future Driven",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/future-driven_night-rider-87.mp3"
+          },
+          {
+            "title": "Galactic Realms",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/galactic-realms_night-rider-87.mp3"
+          },
+          {
+            "title": "K",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/k_night-rider-87.mp3"
+          },
+          {
+            "title": "Rangseis Theme",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/rangseis-theme_night-rider-87.mp3"
+          },
+          {
+            "title": "Scanline Memories",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/scanline-memories_night-rider-87.mp3"
+          },
+          {
+            "title": "Star Conquest",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/star-conquest_night-rider-87.mp3"
+          },
+          {
+            "title": "The Verge",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/the-verge_night-rider-87.mp3"
+          },
+          {
+            "title": "Unbridled",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/unbridled_night-rider-87.mp3"
+          },
+          {
+            "title": "Warzone",
+            "artist": "Night Rider 87",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/night-rider/warzone_night-rider-87.mp3"
+          }
+        ]
+      }
+    ]
   }
 ]
