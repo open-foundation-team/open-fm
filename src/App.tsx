@@ -81,7 +81,7 @@ const App = () => {
   return (
     <main className="app-container">
       <img
-        src="/images/slides/plants.jpeg"
+        src="/open-fm/images/slides/plants.jpeg"
         alt="Slide background"
         style={{
           position: 'absolute',

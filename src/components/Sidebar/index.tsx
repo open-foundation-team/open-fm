@@ -43,7 +43,7 @@ export const Sidebar = ({
 
             {/* Header section */}
             <div className="sidebar-header">
-                <img className='header-logo' src="/logo.png" alt="open.fm ambient radio logo" />
+                <img className='header-logo' src="/open-fm/logo.png" alt="open.fm ambient radio logo" />
                 <p className='header-title'>open.fm</p>
             </div>
 

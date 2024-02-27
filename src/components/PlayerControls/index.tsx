@@ -47,17 +47,17 @@ export const PlayerControls = ({
         {
             icon: <IconCoffee />,
             title: 'coffee house',
-            track: '/audio/coffee-shop-low.mp3'
+            track: '/open-fm/audio/coffee-shop-low.mp3'
         },
         {
             icon: <IconCloud />,
             title: 'thunder storm',
-            track: '/audio/storm-low.mp3'
+            track: '/open-fm/audio/storm-low.mp3'
         },
         {
             icon: <IconFire />,
             title: 'campfire',
-            track: '/audio/campfire-low.mp3'
+            track: '/open-fm/audio/campfire-low.mp3'
         }
     ], []);
 
@@ -92,7 +92,7 @@ export const PlayerControls = ({
                         <div className="nowplaying-artwork">
                             <img
                                 className={[playingClass].join(' ')}
-                                src="/images/vinyl.jpeg"
+                                src="/open-fm/images/vinyl.jpeg"
                                 alt="Spinning vinyl"
                             />
                         </div>
