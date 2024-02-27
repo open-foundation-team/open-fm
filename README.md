@@ -4,9 +4,9 @@
     <img src="public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+<h3 align="center">Open.fm</h3>
 
-  <p align="center">
+<p align="center">
     An app to enhance your ambient experience!
     <br />
     <br />
@@ -47,30 +47,28 @@ To get a local copy up and running, follow these simple steps.
 ### Installation
 
 1. Clone the repository:
-   
+
    ```sh
    git clone https://github.com/your-username/open.fm.git
    ```
-
 2. Navigate to the project directory
-   
+
    ```sh
    cd open.fm
    ```
-
 3. Install NPM packages:
 
    ```sh
    npm install
    ```
-
 4. Start the development server:
-   
+
    ```sh
    npm run dev
    ```
 
 ## Building for production
+
 To build the application for production, run the following command:
 
 ```sh
@@ -80,6 +78,7 @@ npm run build
 This will generate a dist folder with optimized files ready for deployment.
 
 ## Running the Desktop Application
+
 To launch the Tauri desktop application:
 
 ```sh
@@ -93,6 +92,7 @@ npm run tauri build
 ```
 
 ## Contributing
+
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
@@ -100,6 +100,7 @@ Contributions are what make the open source community such an amazing place to l
 3. Commit your Changes (git commit -m 'Add some AmazingFeature')
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
-   
+
 ## License
+
 Distributed under the GNU3 License. See LICENSE for more information.

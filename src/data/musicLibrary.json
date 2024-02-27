@@ -7,84 +7,99 @@
         "songs": [
           {
             "title": "Cant Replace You",
+            "artist": "Knwln Ryan",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/cant-replace-you.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/cant-replace-you_knwln-ryan.mp3"
           },
           {
             "title": "Chillin",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/chillin.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/chillin_astroblk.mp3"
           },
           {
             "title": "Coffee Shop",
+            "artist": "Aviscerall",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/coffee-shop.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/coffee-shop_aviscerall.mp3"
           },
           {
             "title": "Courage",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/courage.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/courage_astroblk.mp3"
           },
           {
             "title": "Drown",
+            "artist": "Netnavi",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/drown.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/drown_netnavi.mp3"
           },
           {
             "title": "Explorer",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/explorer.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/explorer_astroblk.mp3"
           },
           {
             "title": "Fields",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/fields.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/fields_astroblk.mp3"
           },
           {
             "title": "Geneva",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/geneva.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/geneva_astroblk.mp3"
           },
           {
             "title": "Ginger Spice",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/ginger-spice.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/ginger-spice_astroblk.mp3"
           },
           {
             "title": "How Can You Tell",
+            "artist": "Netnavi",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/how-can-you-tell.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/how-can-you-tell_netnavi.mp3"
           },
           {
             "title": "Jupiter",
+            "artist": "Knwln Ryan",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/jupiter.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/jupiter_knwln-ryan.mp3"
           },
           {
             "title": "Lullabyes",
-            "artist": "Someone",
+            "artist": "Aviscerall",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/lullabyes_someone.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/lullabyes_aviscerall.mp3"
           },
           {
             "title": "Nothing Really Matters That Much To Me Anymore",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/nothing-really-matters-that-much-to-me-anymore.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/nothing-really-matters-that-much-to-me-anymore_astroblk.mp3"
           },
           {
             "title": "Progress",
+            "artist": "Aviscerall",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/progress.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/progress_aviscerall.mp3"
           },
           {
             "title": "Sanctuary",
+            "artist": "Aviscerall",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/sanctuary.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/sanctuary_aviscerall.mp3"
           },
           {
             "title": "Vancouver",
+            "artist": "Astroblk",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/code-fi/vancouver.mp3"
+            "src": "/open-fm/audio/playlists/code/code-fi/vancouver_astroblk.mp3"
           }
         ]
       },
@@ -93,48 +108,57 @@
         "songs": [
           {
             "title": "Blue Moon",
+            "artist": "Dean Martin Cover Lofi By Jaritenph",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/blue-moon.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/blue-moon_dean-martin-cover-lofi-by-jaritenph.mp3"
           },
           {
             "title": "Build Me Up Buttercup",
+            "artist": "Reigh Lofi Remix",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/build-me-up-buttercup.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/build-me-up-buttercup_reigh-lofi-remix.mp3"
           },
           {
             "title": "Cant Take My Eyes Off You",
+            "artist": "Aiivawn Lofi Remix",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/cant-take-my-eyes-off-you.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/cant-take-my-eyes-off-you_aiivawn-lofi-remix.mp3"
           },
           {
             "title": "Close To You",
+            "artist": "The Carpenters Reneé Dominique Cover",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/close-to-you.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/close-to-you_the-carpenters-reneé-dominique-cover.mp3"
           },
           {
             "title": "Fly Me To The Moon",
+            "artist": "Joytastic Sarah (Prod Yungrythm)",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/fly-me-to-the-moon.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/fly-me-to-the-moon_joytastic-sarah-(prod-yungrythm).mp3"
           },
           {
             "title": "How Deep Is Your Love",
+            "artist": "Bee Gees",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/how-deep-is-your-love.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/how-deep-is-your-love_bee-gees.mp3"
           },
           {
             "title": "I Just Want To Be The One You Love",
+            "artist": "Cryst",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-just-want-to-be-the-one-you-love.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-just-want-to-be-the-one-you-love_cryst.mp3"
           },
           {
             "title": "I Love You",
+            "artist": "My Lovely Weapons",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-love-you.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/i-love-you_my-lovely-weapons.mp3"
           },
           {
             "title": "Mr Lonely",
+            "artist": "Bobby Vinton Lofi By Ernesto Music",
             "album": "Unknown",
-            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/mr-lonely.mp3"
+            "src": "/open-fm/audio/playlists/code/old-songs-but-lofi/mr-lonely_bobby-vinton-lofi-by-ernesto-music.mp3"
           }
         ]
       }
