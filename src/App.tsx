@@ -29,6 +29,7 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
+    setSong(0);
     setPlaylist(0);
   }, [mood]);
 
