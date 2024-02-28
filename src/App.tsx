@@ -40,7 +40,7 @@ const App = () => {
     if (action === 'next' && song !== typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(prev => prev + 1);
     if (action === 'next' && song === typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(0);
     if (action === 'prev' && song !== 0) setSong(prev => prev - 1);
-    if (action === 'prev' && song === 0) setSong(0);
+    if (action === 'prev' && song === 0) musicRef.current!.currentTime = 0;
   };
 
   // Add listenter to play state of audio ref
