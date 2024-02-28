@@ -19,6 +19,7 @@ const App = () => {
 
   const musicRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setPlaying] = useState(false);
+  const [isLooping, setLooping] = useState(false);
 
   const [mood, setMood] = useState(0);
   const [playlist, setPlaylist] = useState(0);
@@ -35,12 +36,44 @@ const App = () => {
     setSong(0);
   }, [playlist]);
 
+  // Next playlist logic
+  const nextPlaylist = () => {
+    const next = playlist + 1;
+    const moodPlaylistsLength = library[mood].playlists.length;
+
+    // Is required if prev playlist is shorted than next
+    setSong(0);
+
+    // Go to next availible playlist
+    next >= moodPlaylistsLength ? setPlaylist(0) : setPlaylist(1);
+  };
+
   // Function to change song
   const songControl = (action: 'next' | 'prev') => {
-    if (action === 'next' && song !== typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(prev => prev + 1);
-    if (action === 'next' && song === typedLibrary[mood].playlists[playlist].songs.length - 1) setSong(0);
-    if (action === 'prev' && song !== 0) setSong(prev => prev - 1);
-    if (action === 'prev' && song === 0) musicRef.current!.currentTime = 0;
+
+    const currentPlaylistLength = typedLibrary[mood].playlists[playlist].songs.length - 1;
+    const moodPlaylistLength = typedLibrary[mood].playlists.length;
+
+    // Next song within playlist length
+    if (action === 'next' && song !== currentPlaylistLength) {
+      setSong(prev => prev + 1);
+    }
+
+    // Next song at end of playlist
+    if (action === 'next' && song === currentPlaylistLength) {
+      if (!isLooping && moodPlaylistLength > 1) return nextPlaylist();
+      setSong(0);
+    }
+
+    // Previous song within playlist length
+    if (action === 'prev' && song !== 0) {
+      setSong(prev => prev - 1);
+    }
+
+    // Previous song at first song position
+    if (action === 'prev' && song === 0) {
+      musicRef.current!.currentTime = 0;
+    }
   };
 
   // Add listenter to play state of audio ref
@@ -103,14 +136,16 @@ const App = () => {
         selectedPlaylist={playlist}
         selectedSong={song}
         updateMood={setMood}
-        updatePlaylist={setPlaylist}
         updateSong={setSong}
+        nextPlaylist={nextPlaylist}
       />
       <PlayerControls
         isPlaying={isPlaying}
-        nowPlaying={nowPlaying}
         setPlaying={setPlaying}
+        isLooping={isLooping}
+        setLooping={setLooping}
         songControl={songControl}
+        nowPlaying={nowPlaying}
         duration={duration}
         currentTime={currentTime}
       />

@@ -19,6 +19,8 @@ import { Scrubber } from '..';
 interface PlayerControlsProps {
     isPlaying: boolean;
     setPlaying: Dispatch<SetStateAction<boolean>>;
+    isLooping: boolean,
+    setLooping: Dispatch<SetStateAction<boolean>>;
     nowPlaying: {
         song: ISong,
         playlist: IPlaylist
@@ -33,6 +35,8 @@ interface PlayerControlsProps {
 export const PlayerControls = ({
     isPlaying,
     setPlaying,
+    isLooping,
+    setLooping,
     nowPlaying,
     songControl,
     duration,
@@ -41,6 +45,7 @@ export const PlayerControls = ({
 
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
     const playingClass = isPlaying ? 'playing' : null;
+    const loopingClass = isLooping ? 'looping' : null;
     const ambienceClass = isAmbienceOpen ? 'open' : null;
 
     const ambienceSamples = useMemo(() => [
@@ -123,7 +128,7 @@ export const PlayerControls = ({
                     <button className="forward-rewind" onClick={() => songControl('prev')}>
                         <IconBackward />
                     </button>
-                    <button className="play-pause" onClick={() => setPlaying(!isPlaying)}>
+                    <button className="play-pause" onClick={() => setPlaying(prev => !prev)}>
                         {isPlaying ?
                             <IconPause />
                             :
@@ -133,7 +138,7 @@ export const PlayerControls = ({
                     <button className="forward-rewind" onClick={() => songControl('next')}>
                         <IconForward />
                     </button>
-                    <button className="loop-shuffle">
+                    <button className={["loop-shuffle", loopingClass].join(' ')} onClick={() => setLooping(prev => !prev)}>
                         <IconLoop />
                     </button>
                 </div>
