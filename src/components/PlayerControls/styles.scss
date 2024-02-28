@@ -108,7 +108,8 @@
                     width: 24px;
                 }
 
-                &.looping {
+                &.looping,
+                &.shuffled {
                     transform: rotate(360deg);
                 }
             }
