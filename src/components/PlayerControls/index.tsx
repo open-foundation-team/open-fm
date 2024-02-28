@@ -3,9 +3,8 @@ import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 
 // Component imports
 import { AmbiencePlayer } from '../AmbiencePlayer';
+import { Icon } from '../Icon';
 
-// Icon imports
-import { IconBackward, IconChevronDown, IconCloud, IconCoffee, IconFire, IconForward, IconLoop, IconPause, IconPlay, IconSettings, IconShare } from '../../icons';
 
 // Style imports
 import './styles.scss';
@@ -59,17 +58,17 @@ export const PlayerControls = ({
     // Ambience audio files
     const ambienceSamples = useMemo(() => [
         {
-            icon: <IconCoffee />,
+            icon: <Icon name='coffee' />,
             title: 'coffee house',
             track: '/open-fm/audio/coffee-shop-low.mp3'
         },
         {
-            icon: <IconCloud />,
+            icon: <Icon name='cloud' />,
             title: 'thunder storm',
             track: '/open-fm/audio/storm-low.mp3'
         },
         {
-            icon: <IconFire />,
+            icon: <Icon name='fire' />,
             title: 'campfire',
             track: '/open-fm/audio/campfire-low.mp3'
         }
@@ -116,8 +115,8 @@ export const PlayerControls = ({
                         </div>
                     </div>
                     <div className="nowplaying-icons" onClick={() => setAmbienceOpen(prev => !prev)}>
-                        <IconSettings />
-                        <IconShare />
+                        <Icon name='settings-horizontal' />
+                        <Icon name='share' />
                     </div>
                 </div>
 
@@ -132,23 +131,23 @@ export const PlayerControls = ({
                 {/* Music controls section */}
                 <div className="player-controls">
                     <button className={["loop-shuffle", shuffledClass].join(' ')} onClick={() => setShuffled(prev => !prev)}>
-                        <IconLoop />
+                        <Icon name='loop' />
                     </button>
                     <button className="forward-rewind" onClick={() => songControl('prev')}>
-                        <IconBackward />
+                        <Icon name='backward' />
                     </button>
                     <button className="play-pause" onClick={() => setPlaying(prev => !prev)}>
                         {isPlaying ?
-                            <IconPause />
+                            <Icon name='pause' />
                             :
-                            <IconPlay />
+                            <Icon name='play' />
                         }
                     </button>
                     <button className="forward-rewind" onClick={() => songControl('next')}>
-                        <IconForward />
+                        <Icon name='forward' />
                     </button>
                     <button className={["loop-shuffle", loopingClass].join(' ')} onClick={() => setLooping(prev => !prev)}>
-                        <IconLoop />
+                        <Icon name='loop' />
                     </button>
                 </div>
             </div>
@@ -158,7 +157,7 @@ export const PlayerControls = ({
                 <div className="ambience-header">
                     <p className="header-title">Ambience</p>
                     <span onClick={() => setAmbienceOpen(false)}>
-                        <IconChevronDown />
+                        <Icon name='chevron-down' />
                     </span>
                 </div>
                 <div className="button-group">

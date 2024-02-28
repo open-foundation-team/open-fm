@@ -60,10 +60,11 @@
         .nowplaying-icons {
             display: flex;
             align-items: center;
-            gap: .5rem;
+            gap: .75rem;
 
             svg {
-                height: 24px;
+                font-size: 1.5rem;
+                cursor: pointer;
             }
         }
     }
@@ -89,13 +90,14 @@
 
             cursor: pointer;
 
+
             svg {
-                width: 32px;
+                font-size: 2rem;
                 color: #7e8185;
             }
 
             &.play-pause svg {
-                width: 54px;
+                font-size: 3.4rem;
                 background: #201a33;
                 border-radius: 100%;
                 padding: .5rem;
@@ -105,12 +107,16 @@
                 transition: transform .5s;
 
                 svg {
-                    width: 24px;
+                    font-size: 1.5rem;
                 }
 
                 &.looping,
                 &.shuffled {
                     transform: rotate(360deg);
+
+                    span svg {
+                        color: #9c3cbb;
+                    }
                 }
             }
         }
@@ -173,8 +179,7 @@
                 font-size: 12px;
 
                 svg {
-                    height: 24px;
-                    width: 24px;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -202,10 +207,6 @@
             }
 
             &.active {
-
-                svg {
-                    color: #9c3cbb;
-                }
 
                 p {
                     color: #9c3cbb;
