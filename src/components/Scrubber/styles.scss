@@ -2,17 +2,20 @@
 
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: .75rem;
 
     width: 100%;
 
-    .scrubber-counter {}
+    .scrubber-counter {
+        font-size: 13px;
+    }
 
     .scrubber-styled {
         position: relative;
 
         height: 3px;
-        width: 100%;
+        width: 95%;
 
         background: #292f36;
 
