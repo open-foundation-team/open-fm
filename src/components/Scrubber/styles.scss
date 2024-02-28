@@ -1,24 +1,35 @@
-.scrubber-styled {
-    position: relative;
+.scrubber-container {
 
-    height: 3px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
     width: 100%;
 
-    background: #292f36;
+    .scrubber-counter {}
 
-    .scrubber-progress {
-        height: 100%;
-        background: #9424ae;
-    }
+    .scrubber-styled {
+        position: relative;
 
-    .scrubber-marker {
-        position: absolute;
-        top: -2px;
+        height: 3px;
+        width: 100%;
 
-        height: 8px;
-        width: 8px;
-        border-radius: 100%;
+        background: #292f36;
 
-        background: #9424ae;
+        .scrubber-progress {
+            height: 100%;
+            background: #9424ae;
+        }
+
+        .scrubber-marker {
+            position: absolute;
+            top: -2px;
+
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+
+            background: #9424ae;
+        }
     }
 }
