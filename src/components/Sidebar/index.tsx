@@ -13,8 +13,8 @@ interface SidebarProps {
     selectedPlaylist: number;
     selectedSong: number;
     updateMood: Dispatch<SetStateAction<number>>;
-    updatePlaylist: Dispatch<SetStateAction<number>>;
     updateSong: Dispatch<SetStateAction<number>>;
+    nextPlaylist: () => void;
 }
 
 
@@ -25,18 +25,14 @@ export const Sidebar = ({
     selectedPlaylist,
     selectedSong,
     updateMood,
-    updatePlaylist,
-    updateSong
+    updateSong,
+    nextPlaylist
 }: SidebarProps) => {
 
     const focusModes = moods.map((mood) => mood.name);
     const currentPlaylist = moods[selectedMood].playlists[selectedPlaylist];
 
-    // Next playlist logic
-    const nextPlaylist = () => {
-        const next = selectedPlaylist + 1;
-        next >= moods[selectedMood].playlists.length ? updatePlaylist(0) : updatePlaylist(next);
-    };
+    const nextHiddenClass = moods[selectedMood].playlists.length > 1 ? null : 'hidden';
 
     return (
         <div className="sidebar-styled">
@@ -68,7 +64,7 @@ export const Sidebar = ({
             {/* Playlist section */}
             <div className="sidebar-playlist">
                 <p className="playlist-title">{currentPlaylist.name}</p>
-                <button className="playlist-next" onClick={() => nextPlaylist()}>
+                <button className={["playlist-next", nextHiddenClass].join(' ')} onClick={() => nextPlaylist()}>
                     [Next]
                 </button>
             </div>
