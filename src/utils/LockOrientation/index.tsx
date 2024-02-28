@@ -12,8 +12,11 @@ interface LockOrientationProps {
 export const LockOrientation = ({ selectedorientation = 'portrait' }: LockOrientationProps) => {
     useEffect(() => {
         const lockOrientation = () => {
-            if ((screen.orientation as any)?.lock) {
-                (screen.orientation as any).lock('portrait');
+            if ('lock' in screen.orientation) {
+                (screen.orientation as any).lock('portrait').then(
+                    (success: any) => console.debug(success),
+                    (failure: any) => console.debug(failure)
+                );
             } else if ((screen as any)?.lockOrientation) {
                 (screen as any).lockOrientation('portrait');
             }
@@ -22,8 +25,12 @@ export const LockOrientation = ({ selectedorientation = 'portrait' }: LockOrient
         lockOrientation();
 
         return () => {
-            if (screen.orientation?.unlock) {
-                screen.orientation.unlock();
+            if ('unlock' in screen.orientation) {
+                try {
+                    screen.orientation.unlock();
+                } catch (err) {
+                    console.debug('Screen rotation unlock err: ', err)
+                }
             } else if ((screen as any)?.unlockOrientation) {
                 (screen as any).unlockOrientation();
             }
