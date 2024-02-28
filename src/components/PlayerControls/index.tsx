@@ -21,6 +21,8 @@ interface PlayerControlsProps {
     setPlaying: Dispatch<SetStateAction<boolean>>;
     isLooping: boolean,
     setLooping: Dispatch<SetStateAction<boolean>>;
+    isShuffled: boolean,
+    setShuffled: Dispatch<SetStateAction<boolean>>;
     nowPlaying: {
         song: ISong,
         playlist: IPlaylist
@@ -37,17 +39,24 @@ export const PlayerControls = ({
     setPlaying,
     isLooping,
     setLooping,
+    isShuffled,
+    setShuffled,
     nowPlaying,
     songControl,
     duration,
     currentTime
 }: PlayerControlsProps) => {
 
+    // Component states
     const [isAmbienceOpen, setAmbienceOpen] = useState(false);
+
+    // Classes from states
     const playingClass = isPlaying ? 'playing' : null;
     const loopingClass = isLooping ? 'looping' : null;
+    const shuffledClass = isShuffled ? 'shuffled' : null;
     const ambienceClass = isAmbienceOpen ? 'open' : null;
 
+    // Ambience audio files
     const ambienceSamples = useMemo(() => [
         {
             icon: <IconCoffee />,
@@ -122,7 +131,7 @@ export const PlayerControls = ({
 
                 {/* Music controls section */}
                 <div className="player-controls">
-                    <button className="loop-shuffle">
+                    <button className={["loop-shuffle", shuffledClass].join(' ')} onClick={() => setShuffled(prev => !prev)}>
                         <IconLoop />
                     </button>
                     <button className="forward-rewind" onClick={() => songControl('prev')}>

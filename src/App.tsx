@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { MusicPlayer, PlayerControls, Sidebar } from "./components";
 
 // Type imports
-import { IMood } from "./types";
+import { IMood, ISong } from "./types";
 
 // Audio library imports
 import library from "./data/musicLibrary.json";
@@ -20,6 +20,7 @@ const App = () => {
   const musicRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setPlaying] = useState(false);
   const [isLooping, setLooping] = useState(false);
+  const [isShuffled, setShuffled] = useState(false);
 
   const [mood, setMood] = useState(0);
   const [playlist, setPlaylist] = useState(0);
@@ -34,8 +35,33 @@ const App = () => {
   }, [mood]);
 
   useEffect(() => {
+    setSongQueue(generateQueue(library[mood].playlists[playlist].songs));
     setSong(0);
   }, [playlist]);
+
+  useEffect(() => {
+    setSelectedQueueSong(songQueue.findIndex((s) => s === song));
+  }, [song]);
+
+  useEffect(() => {
+    setSongQueue(generateQueue(library[mood].playlists[playlist].songs));
+  }, [isShuffled]);
+
+  // Function to generate a song queue from playlist
+  const generateQueue = (list: ISong[]): number[] => {
+    const queue = Array.from({ length: list.length }, (_, index) => index);
+    if (isShuffled) {
+      // Fisher-Yates shuffle algorithm
+      for (let i = queue.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [queue[i], queue[j]] = [queue[j], queue[i]];
+      }
+    }
+    return queue;
+  };
+
+  const [songQueue, setSongQueue] = useState<number[]>(generateQueue(library[mood].playlists[playlist].songs));
+  const [selectedQueueSong, setSelectedQueueSong] = useState(songQueue[0]);
 
   // Next playlist logic
   const nextPlaylist = () => {
@@ -44,15 +70,16 @@ const App = () => {
 
     // Is required if prev playlist is shorted than next
     setSong(0);
+    setSelectedQueueSong(0);
 
     // Go to next availible playlist
-    next >= moodPlaylistsLength ? setPlaylist(0) : setPlaylist(1);
+    next >= moodPlaylistsLength ? setPlaylist(0) : setPlaylist(next);
   };
 
   // Function to change song
   const songControl = (action: 'next' | 'prev') => {
 
-    const currentPlaylistLength = typedLibrary[mood].playlists[playlist].songs.length - 1;
+    const currentPlaylistLength = songQueue.length - 1;
     const moodPlaylistLength = typedLibrary[mood].playlists.length;
 
     // Next song within playlist length
@@ -63,6 +90,7 @@ const App = () => {
     // Next song at end of playlist
     if (action === 'next' && song === currentPlaylistLength) {
       if (!isLooping && moodPlaylistLength > 1) return nextPlaylist();
+      setSongQueue(generateQueue(library[mood].playlists[playlist].songs));
       setSong(0);
     }
 
@@ -91,7 +119,7 @@ const App = () => {
       try {
         await audio.play();
       } catch (error) {
-        console.error('Playback failed', error);
+        console.debug('Playback failed', error);
       }
     };
 
@@ -102,7 +130,7 @@ const App = () => {
       audio.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
       audio.removeEventListener('ended', () => songControl('next'));
     };
-  }, [song, playlist, mood]);
+  }, [selectedQueueSong, playlist, mood]);
 
   // Update the audio play state
   useEffect(() => {
@@ -113,7 +141,7 @@ const App = () => {
 
   // Create now playing object
   const nowPlaying = {
-    song: typedLibrary[mood].playlists[playlist].songs[song],
+    song: typedLibrary[mood].playlists[playlist].songs[selectedQueueSong],
     playlist: typedLibrary[mood].playlists[playlist]
   };
 
@@ -135,9 +163,9 @@ const App = () => {
         moods={typedLibrary}
         selectedMood={mood}
         selectedPlaylist={playlist}
-        selectedSong={song}
+        selectedSong={selectedQueueSong}
         updateMood={setMood}
-        updateSong={setSong}
+        updateSong={setSelectedQueueSong}
         nextPlaylist={nextPlaylist}
       />
       <PlayerControls
@@ -145,13 +173,15 @@ const App = () => {
         setPlaying={setPlaying}
         isLooping={isLooping}
         setLooping={setLooping}
+        isShuffled={isShuffled}
+        setShuffled={setShuffled}
         songControl={songControl}
         nowPlaying={nowPlaying}
         duration={duration}
         currentTime={currentTime}
       />
       <MusicPlayer
-        key={nowPlaying.song.src}
+        key={selectedQueueSong}
         src={nowPlaying.song.src}
         audioRef={musicRef}
         volume={100}
