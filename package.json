@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "dev:tauri": "tauri dev",
     "build": "tsc && vite build",
+    "build:tauri": "tauri build",
     "generate:library": "node --loader ts-node/esm src/scripts/libraryGenerator.ts",
     "generate:icons": "node --loader ts-node/esm src/scripts/iconsToJson.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tauri": "tauri"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -17,6 +20,7 @@
     "sass": "^1.70.0"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.5.10",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
