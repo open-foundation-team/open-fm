@@ -168,6 +168,77 @@
     "name": "synth",
     "playlists": [
       {
+        "name": "near-dark",
+        "songs": [
+          {
+            "title": "Andromeda",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/andromeda_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Dressed To Kill",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/dressed-to-kill_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Eye Of The Storm",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/eye-of-the-storm_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Graveyard Shift",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/graveyard-shift_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Invader",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/invader_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Kickstart My Heart (Bonus Remix)",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/kickstart-my-heart-(bonus-remix)_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Midnight Never Ends",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/midnight-never-ends_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Near Dark",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/near-dark_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Riser",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/riser_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "The Pitt",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/the-pitt_dance-with-the-dead.m4a"
+          },
+          {
+            "title": "Waves",
+            "artist": "Dance With The Dead",
+            "album": "Unknown",
+            "src": "/open-fm/audio/playlists/synth/near-dark/waves_dance-with-the-dead.m4a"
+          }
+        ]
+      },
+      {
         "name": "night-rider",
         "songs": [
           {
